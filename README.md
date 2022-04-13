@@ -106,3 +106,54 @@ dark (@media (prefers-color-scheme: dark))
 등등
 ```
 https://tailwindcss.com/docs/hover-focus-and-other-states#quick-reference
+
+### #4.5 Transitions
+Ring Width
+상자 그림자가 있는 윤곽선을 만들기 위한 유틸리티입니다.
+ring-{width} 유틸리티를 사용하여 특정 두께의 solid box-shadow를 요소에 적용합니다. 링은 기본적으로 반투명한 파란색으로 많은 시스템의 기본 포커스 링 스타일과 유사합니다.
+```
+button class="... ring-offset-2 ring-2"
+button class="... focus:ring-2"
+div class="ring-2 hover:ring-4"
+div class="ring-2 md:ring-4"
+```
+https://tailwindcss.com/docs/ring-width
+
+Ring Color
+외곽선 링의 색상을 설정하는 유틸리티입니다.
+ring-{color} 유틸리티를 사용하여 외곽선 링의 색상을 설정합니다.
+```
+button class="... ring-2 ring-blue-500"
+button class="... ring-2 ring-blue-500/50
+```
+https://tailwindcss.com/docs/ring-color
+
+### #4.6 Modifiers for lists
+empty (:empty)
+
+empty 수정자를 사용하여 콘텐츠가 없는 경우 요소 스타일 지정
+empty:hidden은 display: none과 같다.
+```
+< ul>
+{#each people as person}
+< li class="empty:hidden ...">{person.hobby}
+{/each}
+< /ul>
+```
+https://tailwindcss.com/docs/hover-focus-and-other-states#empty
+
+### #4.7 Modifiers for Forms
+group
+
+Styling based on parent state (group-{modifier})
+상위 상태를 기반으로 한 스타일 지정
+일부 부모 요소의 상태를 기반으로 요소의 스타일을 지정해야 하는 경우 부모를 그룹 클래스로 표시하고 group-hover와 같은 group-* 수정자를 사용하여 대상 요소의 스타일을 지정합니다.
+이 패턴은 group-focus, group-active 또는 group-odd와 같은 모든 유사 클래스 수정자와 함께 작동합니다.
+https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-parent-state
+
+peer
+
+Styling based on sibling state (peer-{modifier})
+형제 상태를 기반으로 한 스타일 지정(peer-{modifier})
+형제 요소의 상태를 기반으로 요소의 스타일을 지정해야 하는 경우 형제를 피어 클래스로 표시하고 peer-invalid와 같은 peer-* 수정자를 사용하여 대상 요소의 스타일을 지정합니다. 이 패턴은 모든 유사 클래스 수정자(예: peer-focus, peer-required 및 peer-disabled)와 함께 작동합니다.
+https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-sibling-state
